@@ -1,0 +1,40 @@
+.income {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2em 1em 2em;
+}
+
+.arrow {
+  height: 35px;
+  width: 35px;
+  padding-top: 10px;
+}
+
+.header {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+.w-100 div {
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.datepicker {
+  margin-top: 20px;
+}
+
+.select {
+  margin-top: 20px;
+}
+
+.input {
+  margin-top: 20px;
+}
