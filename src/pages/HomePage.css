@@ -16,11 +16,11 @@
 .income-homepage {
   width: 100%;
   height: 350px;
-  background-color: green;
+  background-color: #668925;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: large;
+  font-size: 40px;
   border-radius: 12px;
   margin-top: 45px;
 }
@@ -28,11 +28,15 @@
 .expenses-homepage {
   width: 100%;
   height: 350px;
-  background-color: red;
+  background-color: #e33e33;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: large;
+  font-size: 40px;
   border-radius: 12px;
   margin-top: 20px;
+}
+
+.homepage-heading {
+  color: #000805;
 }

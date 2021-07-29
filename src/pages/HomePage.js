@@ -8,12 +8,12 @@ export const HomePage = () => (
       <div className="list-buttons">
         <Link to="/income">
           <div className="income-homepage">
-            <li>Income</li>
+            <li className="homepage-heading">Income</li>
           </div>
         </Link>
         <Link to="/expenses">
           <div className="expenses-homepage">
-            <li>Expenses</li>
+            <li className="homepage-heading">Expenses</li>
           </div>
         </Link>
       </div>
