@@ -7,8 +7,8 @@ export const Income = () => {
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState(new Date())
-  const [type, setType] = useState('')
-  const [category, setCategory] = useState('')
+  const [type, setType] = useState(null)
+  const [category, setCategory] = useState(null)
 
   return (
     <Form

@@ -43,7 +43,7 @@ export const Form = ({
         <Select
           placeholder="Typ"
           value={type}
-          onChange={(e) => setType(e.target.value)}
+          onChange={(value) => setType(value)}
         >
           {Object.values(PAYMENT_TYPES).map((optionType) => (
             <Option key={optionType} value={optionType}>
@@ -56,7 +56,7 @@ export const Form = ({
         <Select
           placeholder="Kategória"
           value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={(value) => setCategory(value)}
         >
           {categories.map((optionCategory) => (
             <Option key={optionCategory} value={optionCategory}>
