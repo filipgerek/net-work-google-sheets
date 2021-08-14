@@ -20,8 +20,17 @@ export const Form = ({
   setCategory,
   setAmount,
   categories,
-}) => (
-  <div>
+  handleSubmit
+}) => {
+const handleButtonClick = () => {
+  handleSutbmit()
+  setAmount('')
+  setDate(new Date())
+  setName("")
+  setType(null)
+  setCategory(null)
+}
+  return <div>
     <div className="container">
       <div className="header">
         <ArrowBack />
@@ -73,10 +82,10 @@ export const Form = ({
         />
       </div>
       <div className="button">
-        <Button type="primary" size="large" shape="round">
+        <Button onClick={handleButtonClick} type="primary" size="large" shape="round">
           Add to table
         </Button>
       </div>
     </div>
   </div>
-)
+}

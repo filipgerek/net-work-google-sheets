@@ -10,6 +10,16 @@ export const Income = () => {
   const [type, setType] = useState(null)
   const [category, setCategory] = useState(null)
 
+  const handleSutbmit = () => {
+    fetch(`${url}VÝDAJE`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {name, amount, date, type, category}
+    })
+  }
+
   return (
     <Form
       heading="Income"
@@ -24,6 +34,7 @@ export const Income = () => {
       amount={amount}
       setAmount={setAmount}
       categories={Object.values(INCOME_CATEGORIES)}
+      handleSutbmit={handleSutbmit}
     />
   )
 }

@@ -10,6 +10,18 @@ export const Expenses = () => {
   const [type, setType] = useState(null)
   const [category, setCategory] = useState(null)
 
+  const url = process.env.NODE_ENV === ' production' ? 'https://maftvej-net-worth-api.herokuapp.com/' : 'http://localhost:3010/'
+
+const handleSutbmit = () => {
+  fetch(`${url}VÝDAJE`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: {name, amount, date, type, category}
+  })
+}
+
   return (
     <Form
       heading="Expenses"
@@ -24,6 +36,7 @@ export const Expenses = () => {
       amount={amount}
       setAmount={setAmount}
       categories={Object.values(EXPENSE_CATEGORIES)}
+      handleSutbmit={handleSutbmit}
     />
   )
 }
