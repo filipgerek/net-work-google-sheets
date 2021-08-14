@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, DatePicker, Input, InputNumber, Select } from 'antd'
+import { Button, DatePicker, Input, Select } from 'antd'
 import moment from 'moment'
 import { ArrowBack } from '../ArrowBack/ArrowBack'
 import './Form.css'
@@ -76,7 +76,7 @@ export const Form = ({
           </Select>
         </div>
         <div className="input w-100">
-          <InputNumber
+          <Input
             placeholder="Suma"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
