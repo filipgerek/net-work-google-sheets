@@ -12,7 +12,7 @@ export const Income = () => {
   const [category, setCategory] = useState(null)
 
   const url =
-    process.env.NODE_ENV === ' production'
+    process.env.NODE_ENV === 'production'
       ? 'https://maftvej-net-worth-api.herokuapp.com/'
       : 'http://localhost:3010/'
 
