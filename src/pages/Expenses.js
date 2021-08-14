@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from '../components/Form'
 import '../components/Form/Form.css'
 import { EXPENSE_CATEGORIES } from '../constants'
+import { convertDateToString } from '../utils/date'
 
 export const Expenses = () => {
   const [name, setName] = useState('')
@@ -10,17 +11,27 @@ export const Expenses = () => {
   const [type, setType] = useState(null)
   const [category, setCategory] = useState(null)
 
-  const url = process.env.NODE_ENV === ' production' ? 'https://maftvej-net-worth-api.herokuapp.com/' : 'http://localhost:3010/'
+  const url =
+    process.env.NODE_ENV === ' production'
+      ? 'https://maftvej-net-worth-api.herokuapp.com/'
+      : 'http://localhost:3010/'
 
-const handleSutbmit = () => {
-  fetch(`${url}VÝDAJE`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: {name, amount, date, type, category}
-  })
-}
+  const handleSubmit = async () => {
+    const { status } = await fetch(`${url}VÝDAJE`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        amount,
+        date: convertDateToString(date),
+        type,
+        category,
+      }),
+    })
+    alert(status)
+  }
 
   return (
     <Form
@@ -36,7 +47,7 @@ const handleSutbmit = () => {
       amount={amount}
       setAmount={setAmount}
       categories={Object.values(EXPENSE_CATEGORIES)}
-      handleSutbmit={handleSutbmit}
+      handleSubmit={handleSubmit}
     />
   )
 }

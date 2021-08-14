@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from '../components/Form'
 import '../components/Form/Form.css'
 import { INCOME_CATEGORIES } from '../constants'
+import { convertDateToString } from '../utils/date'
 
 export const Income = () => {
   const [name, setName] = useState('')
@@ -10,14 +11,26 @@ export const Income = () => {
   const [type, setType] = useState(null)
   const [category, setCategory] = useState(null)
 
-  const handleSutbmit = () => {
-    fetch(`${url}VÝDAJE`, {
+  const url =
+    process.env.NODE_ENV === ' production'
+      ? 'https://maftvej-net-worth-api.herokuapp.com/'
+      : 'http://localhost:3010/'
+
+  const handleSubmit = async () => {
+    const { status } = await fetch(`${url}ZISKY`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: {name, amount, date, type, category}
+      body: JSON.stringify({
+        name,
+        amount,
+        date: convertDateToString(date),
+        type,
+        category,
+      }),
     })
+    alert(status)
   }
 
   return (
@@ -34,7 +47,7 @@ export const Income = () => {
       amount={amount}
       setAmount={setAmount}
       categories={Object.values(INCOME_CATEGORIES)}
-      handleSutbmit={handleSutbmit}
+      handleSubmit={handleSubmit}
     />
   )
 }
