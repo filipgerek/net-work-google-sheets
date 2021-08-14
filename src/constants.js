@@ -22,3 +22,8 @@ export const PAYMENT_TYPES = {
   CASH: 'CASH',
   BANK: 'BANK',
 }
+
+export const PARAMS = {
+  INCOMES: 'ZISKY',
+  EXPENSES: 'VÝDAJE',
+}

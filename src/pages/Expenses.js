@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form } from '../components/Form'
 import '../components/Form/Form.css'
-import { EXPENSE_CATEGORIES } from '../constants'
+import { EXPENSE_CATEGORIES, PARAMS } from '../constants'
 import { handleSubmit } from '../utils/handleSubmit'
 
 export const Expenses = () => {
@@ -26,7 +26,14 @@ export const Expenses = () => {
       setAmount={setAmount}
       categories={Object.values(EXPENSE_CATEGORIES)}
       handleSubmit={() =>
-        handleSubmit({ name, amount, date, type, category, param: 'VÝDAJE' })
+        handleSubmit({
+          name,
+          amount,
+          date,
+          type,
+          category,
+          param: PARAMS.EXPENSES,
+        })
       }
     />
   )
