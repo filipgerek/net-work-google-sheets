@@ -1,7 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
-  "start_url": "https://net-worth-google-sheets.onrender.com/",
+  "start_url": "/",
   "scope": "/",
   "icons": [
     {
